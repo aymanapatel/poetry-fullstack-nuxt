@@ -1,13 +1,28 @@
 <template>
-  <div class="min-h-screen bg-gray-50">
-    <nav class="bg-white shadow-sm">
+  <header class="fixed top-0 left-0 right-0 z-50">
+    <nav class="bg-gradient-to-r from-indigo-600 to-blue-500 shadow-lg">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-16">
-          <div class="flex">
-            <NuxtLink to="/" class="flex items-center px-2 text-gray-900 font-semibold">
-              My Poetry Corner
+        <div class="flex items-center justify-between h-16">
+          <!-- Left side: Logo and Title -->
+          <div class="flex items-center">
+            <NuxtLink to="/" class="flex items-center">
+              <svg 
+                class="h-8 w-8 text-white" 
+                viewBox="0 0 24 24" 
+                fill="none" 
+                stroke="currentColor"
+              >
+                <path 
+                  stroke-linecap="round" 
+                  stroke-linejoin="round" 
+                  stroke-width="2" 
+                  d="M13 10V3L4 14h7v7l9-11h-7z"
+                />
+              </svg>
+              <h1 class="ml-2 text-xl font-semibold text-white">My poetry corner</h1>
             </NuxtLink>
           </div>
+          <!-- Right side: Navigation -->
           <div class="flex items-center">
             <NuxtLink 
               v-if="user" 
@@ -36,7 +51,7 @@
     </nav>
     <NuxtLoadingIndicator />
     <NuxtPage />
-  </div>
+  </header>
 </template>
 
 <script setup>
@@ -64,3 +79,7 @@ watchEffect(() => {
   }
 })
 </script>
+
+<style scoped>
+/* Optional: Add any additional custom styles here */
+</style>
